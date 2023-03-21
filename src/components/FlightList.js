@@ -5,7 +5,7 @@ const FlightList = () => {
   const [Flights, setFlights] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/flights")
+    fetch("https://flightdataserver.onrender.com/api/flights")
       .then((res) => res.json())
       .then((data) => {
         setFlights(data);

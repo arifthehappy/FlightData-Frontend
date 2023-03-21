@@ -49,7 +49,7 @@ const FlightForm = () => {
       setLoading(true);
       try {
         await axios
-          .post("http://localhost:5000/api/flight", FlightData)
+          .post("https://flightdataserver.onrender.com/api/flight", FlightData)
           .then((res) => {
             console.log(res);
           });

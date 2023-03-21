@@ -36,7 +36,7 @@ const Chat = () => {
     if (validateForm()) {
       //send prompt to backend
       axios
-        .post("http://localhost:5000/api/chat", { prompt })
+        .post("https://flightdataserver.onrender.com/api/chat", { prompt })
         .then((res) => {
           setResponse(res.data.content);
         })
@@ -69,8 +69,7 @@ const Chat = () => {
       </div>
       <div className="chatbot-body">
         <p>Answer:</p>
-        {console.log(response)}
-        {console.log("prompt", prompt)}
+
         {response === "" ? ( // if response is empty
           <p>
             <i>Enter your query..</i>
