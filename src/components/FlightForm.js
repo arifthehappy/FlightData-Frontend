@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FormControl } from "@mui/material";
 import axios from "axios";
-import Nav from "./Nav";
 
 const FlightForm = () => {
   //state to hold loading status
@@ -89,7 +88,7 @@ const FlightForm = () => {
   return (
     <>
       {Loading ? <div className="overlay-loader"> Please wait...</div> : null}
-      <Nav />
+
       <div className="center">
         <h2>Add Flight Data</h2>
         <FormControl>

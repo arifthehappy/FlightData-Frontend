@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Nav from "./Nav";
+import Chat from "./Chat";
 
 const FlightList = () => {
   const [Flights, setFlights] = useState([]);
@@ -18,10 +18,13 @@ const FlightList = () => {
 
   return (
     <>
-      <Nav />
-      <div className="center">
-        <h1>Flight List</h1>
+      <div className="flex-grid">
+        <div id="chatbot">
+          <Chat />
+        </div>
+
         <table>
+          <caption>Flight List</caption>
           <thead>
             <tr>
               <th>Flight Number</th>

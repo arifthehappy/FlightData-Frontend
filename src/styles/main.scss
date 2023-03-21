@@ -28,14 +28,15 @@ nav a:hover {
 }
 
 .center {
-  margin: auto;
-  width: 100%;
-  padding: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 form {
   width: 100%;
-  max-width: 500px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -59,6 +60,7 @@ input {
 .submit-button {
   background-color: #4caf50;
   border: none;
+  border-radius: 5px;
   color: white;
   padding: 12px 20px;
   text-align: center;
@@ -76,6 +78,7 @@ input {
 .cancel-button {
   background-color: #f44336;
   border: none;
+  border-radius: 5px;
   color: white;
   padding: 12px 20px;
   text-align: center;
@@ -89,6 +92,52 @@ input {
 table {
   border-collapse: collapse;
   width: 100%;
+}
+
+// responsive table
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 10px;
+    display: block;
+    border-bottom: 2px solid #ddd;
+  }
+
+  td {
+    display: block;
+    text-align: right;
+    font-size: 1.3em;
+    border-bottom: 1px dotted #ccc;
+  }
+
+  td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  td:last-child {
+    border-bottom: 0;
+  }
+}
+
+caption {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
 }
 
 th,
@@ -117,4 +166,92 @@ th {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.chatbot {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ccc;
+  z-index: 999;
+}
+
+.chatbot-header {
+  background: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.chatbot-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.chatbot-body {
+  padding: 10px;
+  height: 100px;
+  overflow-y: scroll;
+}
+
+.chatbot-body p {
+  margin: 0;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.chatbot-footer {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+.chatbot-footer input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.chatbot-footer button {
+  background: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.chatbot-footer button:hover {
+  background: #45a049;
+}
+
+.chatbot-footer .clearButton {
+  background: #f44336;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.chatbot-footer .clearButton:hover {
+  background: #e53935;
+}
+
+.chat-open-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: #4caf50;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #ccc;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }

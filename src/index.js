@@ -6,13 +6,23 @@ import App from "./App";
 import ErrorPage from "./errorPage";
 import reportWebVitals from "./reportWebVitals";
 import FlightList from "./components/FlightList";
+import FlightForm from "./components/FlightForm";
 
 const BrowserRouter = createBrowserRouter([
-  { path: "/", element: <App />, errorElement: <ErrorPage /> },
   {
-    path: "/flight-list",
-    element: <FlightList />,
+    path: "/",
+    element: <App />,
     errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <FlightForm />,
+      },
+      {
+        path: "/flight-list",
+        element: <FlightList />,
+      },
+    ],
   },
 ]);
 
